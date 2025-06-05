@@ -1,0 +1,20 @@
+.kk {
+  color: #cf3836;
+  border-bottom-width: 2px;
+  border-color: #cf3836;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.btnn {
+  background-color: transparent;
+  border-bottom-width: 3px;
+  border-color: #cf3836;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 200px;
+  margin-right: 100px;
+}
