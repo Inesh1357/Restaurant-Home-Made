@@ -11,8 +11,6 @@ const CartItem = props => (
         removeCartItem,
         incrementCartItemQuantity,
         decrementCartItemQuantity,
-        onIncrement,
-        onDecrement,
       } = value
       const {cartItemDetails} = props
       const {dishName, dishImage, dishPrice, dishId, quantity} = cartItemDetails
@@ -22,11 +20,9 @@ const CartItem = props => (
       // TODO: Update the functionality to increment and decrement quantity of the cart item
       const onClickOnIncreses = () => {
         incrementCartItemQuantity(dishId)
-        onIncrement(dishId)
       }
       const onClickOnDrecreses = () => {
         decrementCartItemQuantity(dishId)
-        onDecrement(dishId)
       }
       return (
         <li className="cart-item">

@@ -26,8 +26,6 @@ class CategoryItem extends Component {
       <CartContext.Consumer>
         {value => {
           const {
-            onIncrement,
-            onDecrement,
             addCartItem,
             incrementCartItemQuantity,
             decrementCartItemQuantity,
@@ -43,7 +41,6 @@ class CategoryItem extends Component {
           )
           const onClickSub = () => {
             const {quantity} = this.state
-            onDecrement(dishId)
             decrement(dishId)
             decrementCartItemQuantity(dishId)
             if (quantity > 1) {
@@ -53,7 +50,6 @@ class CategoryItem extends Component {
             }
           }
           const onClickAdd = () => {
-            onIncrement({...categoryItem})
             increment(dishId)
             incrementCartItemQuantity(dishId)
             this.setState(prevState => ({

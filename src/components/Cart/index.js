@@ -20,7 +20,7 @@ const Cart = () => (
 
       if (showEmptyView === false) {
         cartList.forEach(eachItem => {
-          amount += eachItem.qualityAdd * eachItem.dishPrice
+          amount += eachItem.quantity * eachItem.dishPrice
         })
 
         priceAmount = amount
@@ -31,7 +31,7 @@ const Cart = () => (
       }
 
       return (
-        <div>
+        <div data-testid="cart">
           <Header />
           <div className="cart-container">
             {showEmptyView ? (

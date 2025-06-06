@@ -10,33 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 class App extends Component {
-  state = {foodList: [], cartList: []}
-
-  onIncrement = foodItem => {
-    this.setState(prevState => ({
-      foodList: [...prevState.foodList, foodItem],
-    }))
-  }
-
-  onDecrement = id => {
-    const {foodList} = this.state
-
-    let countVal = 0
-    const filterDataListAdd = foodList.map(eachItem => {
-      if (countVal === 0 && eachItem.dishId === id) {
-        countVal += 1
-        return null
-      }
-      return eachItem
-    })
-    const dataFilterValue = filterDataListAdd.filter(
-      eachItem => eachItem !== null,
-    )
-
-    this.setState({
-      foodList: dataFilterValue,
-    })
-  }
+  state = {cartList: []}
 
   addCartItem = product => {
     const {cartList} = this.state
@@ -103,14 +77,11 @@ class App extends Component {
   }
 
   render() {
-    const {foodList, cartList} = this.state
+    const {cartList} = this.state
     return (
       <CartContext.Provider
         value={{
-          foodList,
           cartList,
-          onIncrement: this.onIncrement,
-          onDecrement: this.onDecrement,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
